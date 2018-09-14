@@ -2,42 +2,42 @@ package databricks
 
 // ClusterCreateRequest is a Create request for a Cluster.
 type ClusterCreateRequest struct {
-	NumWorkers             *int32           `json:"num_workers,omitempty"`
-	Autoscale              *Autoscale       `json:"autoscale,omitempty"`
-	ClusterID              string           `json:"cluster_id"`
-	ClusterName            string           `json:"cluster_name"`
-	SparkVersion           string           `json:"spark_version"`
-	SparkConf              *S3StorageInfo   `json:"spark_conf,omitempty"`
-	AWSAttributes          *AWSAttributes   `json:"aws_attributes,omitempty"`
-	NodeTypeID             string           `json:"node_type_id"`
-	DriverNodeTypeID       string           `json:"driver_node_type_id"`
-	SSHPublicKeys          []string         `json:"ssh_public_keys"`
-	CustomTags             []ClusterTag     `json:"custom_tags"`
-	ClusterLogConf         *ClusterLogConf  `json:"cluster_log_conf,omitempty"`
-	InitScripts            []InitScriptInfo `json:"init_scripts"`
-	SparkEnvVars           SparkEnvPair     `json:"spark_env_vars,omitempty"`
-	AutoterminationMinutes int32            `json:"autotermination_minutes"`
-	EnableElasticDisk      bool             `json:"enable_elastic_disk"`
+	NumWorkers             *int32            `json:"num_workers,omitempty"`
+	Autoscale              *Autoscale        `json:"autoscale,omitempty"`
+	ClusterID              string            `json:"cluster_id"`
+	ClusterName            string            `json:"cluster_name"`
+	SparkVersion           string            `json:"spark_version"`
+	SparkConf              *S3StorageInfo    `json:"spark_conf,omitempty"`
+	AWSAttributes          *AWSAttributes    `json:"aws_attributes,omitempty"`
+	NodeTypeID             string            `json:"node_type_id"`
+	DriverNodeTypeID       string            `json:"driver_node_type_id"`
+	SSHPublicKeys          []string          `json:"ssh_public_keys"`
+	CustomTags             []ClusterTag      `json:"custom_tags"`
+	ClusterLogConf         *ClusterLogConf   `json:"cluster_log_conf,omitempty"`
+	InitScripts            []InitScriptInfo  `json:"init_scripts"`
+	SparkEnvVars           map[string]string `json:"spark_env_vars,omitempty"`
+	AutoterminationMinutes int32             `json:"autotermination_minutes"`
+	EnableElasticDisk      bool              `json:"enable_elastic_disk"`
 }
 
 // ClusterEditRequest is a Edit request for a Cluster.
 type ClusterEditRequest struct {
-	NumWorkers             *int32           `json:"num_workers,omitempty"`
-	Autoscale              *Autoscale       `json:"autoscale,omitempty"`
-	ClusterID              string           `json:"cluster_id"`
-	ClusterName            string           `json:"cluster_name"`
-	SparkVersion           string           `json:"spark_version"`
-	SparkConf              *S3StorageInfo   `json:"spark_conf,omitempty"`
-	AWSAttributes          *AWSAttributes   `json:"aws_attributes,omitempty"`
-	NodeTypeID             string           `json:"node_type_id"`
-	DriverNodeTypeID       string           `json:"driver_node_type_id"`
-	SSHPublicKeys          []string         `json:"ssh_public_keys,omitempty"`
-	CustomTags             []ClusterTag     `json:"custom_tags,omitempty"`
-	ClusterLogConf         ClusterLogConf   `json:"cluster_log_conf"`
-	InitScripts            []InitScriptInfo `json:"init_scripts,omitempty"`
-	SparkEnvVars           SparkEnvPair     `json:"spark_env_vars"`
-	AutoterminationMinutes int32            `json:"autotermination_minutes"`
-	EnableElasticDisk      bool             `json:"enable_elastic_disk"`
+	NumWorkers             *int32            `json:"num_workers,omitempty"`
+	Autoscale              *Autoscale        `json:"autoscale,omitempty"`
+	ClusterID              string            `json:"cluster_id"`
+	ClusterName            string            `json:"cluster_name"`
+	SparkVersion           string            `json:"spark_version"`
+	SparkConf              *S3StorageInfo    `json:"spark_conf,omitempty"`
+	AWSAttributes          *AWSAttributes    `json:"aws_attributes,omitempty"`
+	NodeTypeID             string            `json:"node_type_id"`
+	DriverNodeTypeID       string            `json:"driver_node_type_id"`
+	SSHPublicKeys          []string          `json:"ssh_public_keys,omitempty"`
+	CustomTags             []ClusterTag      `json:"custom_tags,omitempty"`
+	ClusterLogConf         ClusterLogConf    `json:"cluster_log_conf"`
+	InitScripts            []InitScriptInfo  `json:"init_scripts,omitempty"`
+	SparkEnvVars           map[string]string `json:"spark_env_vars,omitempty"`
+	AutoterminationMinutes int32             `json:"autotermination_minutes"`
+	EnableElasticDisk      bool              `json:"enable_elastic_disk"`
 }
 
 // ClusterGetResponse is a response for a Cluster Get request.
