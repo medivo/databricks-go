@@ -16,7 +16,7 @@ func main() {
 	flag.Parse()
 	client, err := databricks.NewClient(
 		*account,
-		databricks.ClientHTTPClient(databricks.NetrcHTTPClient),
+		databricks.ClientHTTPClient(databricks.NewBearerHTTPClient("db_token")),
 	)
 	if err != nil {
 		log.Fatalln(err)
